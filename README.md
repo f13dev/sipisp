@@ -1,3 +1,5 @@
+= This is a work in progress, do not use =
+
 = Install =
 1. Download latest release zip
 1. Unzip the latest release with 'unzip filename.zip'
