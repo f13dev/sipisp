@@ -75,6 +75,11 @@ delete_user()
     # Attempt to delete the user
 
     sudo userdel -r "$user"
+
+    # find line in /etc/ppp/pap-secrets that is "#$user account"
+    # Delete it and the line following it (the actual pap user record)
+    sudo sed -i "/#$user sipisp/,+1 d" /etc/ppp/pap-secrets
+
 }
 
 change_user_password()
@@ -103,6 +108,15 @@ change_user_password()
     # Attempt to change password
     
     sudo usermod --password $(echo "$pass" | openssl passwd -1 -stdin) "$user"
+
+    # find line in /etc/ppp/pap-secrets that is "#$user account"
+    # Delete it and the line following it (the actual pap user record)
+    sudo sed -i "/#$user sipisp/,+1 d" /etc/ppp/pap-secrets
+
+    sudo cat <<EOF >> /etc/ppp/pap-secrets
+#$user sipisp
+$user   *   "$pass" *
+EOF
 }
 
 case "$mode" in
