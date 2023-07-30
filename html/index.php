@@ -1,4 +1,7 @@
 <html>
+<head>
+    <title>SipISP</title>
+</head>
 <body style="background: #aaa;">
 <table style="width: 640px; margin: auto; background: #ccc;">
   <tr>

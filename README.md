@@ -1,6 +1,9 @@
-= This is a work in progress, do not use =
+# SipISP
+A home dial up ISP that runs on an ATA SIP device and a Raspberry Pi
 
-= Install =
+## This is a work in progress and is probably best avoided for now (unless you would like to contribute)
+
+## Install
 1. Download latest release zip
 1. Unzip the latest release with 'unzip filename.zip'
 1. Change to the release folder with 'cd folder_name'
